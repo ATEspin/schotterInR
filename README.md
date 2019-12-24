@@ -12,7 +12,7 @@ coders.
 [**CHECK THE ORIGINAL
 NOW**](http://www.medienkunstnetz.de/works/schotter/)
 
-To pay tribute to Georg, I decided to implement a chunck of code that
+To pay tribute to Georg, I decided to implement a chunk of code that
 would reproduce Schotter using R. There are probably several ways to
 code this algorithm and I am sure several people have done this before.
 My goal was to see if my current R knowledge could be use to program
@@ -38,7 +38,7 @@ Building a square
 The easiest way to build a square in ggplot2 is probably using
 *geom\_rect*, however I did not find a way to rotate the geometry, so I
 decided to go for a polygon (*geom\_polygon*) and control the position
-of the 4 vertices outsite ggplot. For that I created the following
+of the 4 vertex outsite ggplot. For that I created the following
 function:
 
     square<-function(x0=1,y0=1, size=1, angle=0){
@@ -53,12 +53,12 @@ function:
     }
 
 Where **x0** and **y0** control the position of lower left (or other
-depending on the axis orientation) vertice, size the lenght of the sides
+depending on the axis orientation) vertex, size the lenght of the sides
 and angle the amount of rotation from the original position. An **x**
-and **y** for each vertice is set as a template relative to **x0**,
+and **y** for each vertex is set as a template relative to **x0**,
 **y0** and size. In this way, we will be able to control the position of
 the square in the canvas. **x2** and **y2** are set as the rotated
-coordinates for **x** and **y**, respectively. Ultimatly, we will use
+coordinates for **x** and **y**, respectively. Ultimately, we will use
 **x2** and **y2**, that will be equal to **x** and **y** if angle is 0.
 I decided to generate new columns for the rotations so I can plot both,
 the original x,y and the rotated (I confess I had to brush up my
@@ -106,9 +106,9 @@ The original Schotter has 12 columns and 24 rows (that I counted)
         }
       }
 
-This chunk creates a data frame containing the **x**, **y**, **x2** and
+This chunk creates a data frame containing the four **x**, **y**, **x2** and
 **y2** for 288 (24x12) squares, that we can plotted. To plot each square
-independently as we will need for later, we need to add a new
+independently as we will do later, we need to add a new
 *geom\_polygon* layer for each square to a ggplot object. We could have
 done this in the previous loops, but in the course of this mini project
 I have learned that you can pass a list to ggplot. So, we can iterate
@@ -147,7 +147,7 @@ such that I can easely change the background color.
 Generative process
 ------------------
 
-Generative art is define by wikipedia as:
+Generative art is defined by wikipedia as:
 
     Generative art refers to art that in whole or in part has been created with the use of an autonomous system. An autonomous system in this context is generally one that is non-human and can independently determine features of an artwork that would otherwise require decisions made directly by the artist. 
 
@@ -181,8 +181,8 @@ increases by row.
 
 Ups! Something isn’t quite right (although I like it!). I think is
 because *j*, that controls how much displacement and rotation can be
-added get to be too big in respect to **x** and **y**. So, let’s control
-for that. For that I devided *j* by 40 in the case of displace and by
+added gets to be too big in respect to **x** and **y**. So, let’s control
+for that. I devided *j* by 40 in the case of displace and by
 100 in the case of rotate. I found these numbers by playing around. I
 also flipped y axis.
 
@@ -213,7 +213,7 @@ like Schotter. Because the randomness, every time we run the code, the
 result will be different.
 
 Now we wrap the code in a function so that we can easily change
-parameters
+some parameters
 
     Schotter<-function(ncol_s=12, nrow_s=24, control_dis=40, 
                        control_rot=100, fill_s=NA, color_s='black', alpha_s=0.2, 
