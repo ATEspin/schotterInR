@@ -107,7 +107,7 @@ The original Schotter has 12 columns and 24 rows (that I counted)
       }
 
 This chunk creates a data frame containing the four **x**, **y**, **x2** and
-**y2** for 288 (24x12) squares, that we can plotted. To plot each square
+**y2** for 288 (24x12) squares, that we can plot. To plot each square
 independently as we will do later, we need to add a new
 *geom\_polygon* layer for each square to a ggplot object. We could have
 done this in the previous loops, but in the course of this mini project
