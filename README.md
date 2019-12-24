@@ -1,5 +1,5 @@
 # Reproducing Schotter in R
-I have been captibated by creative coding and generative art for a
+I have been captivated by creative coding and generative art for a
 while. After discovering some of the work by [Antonio
 S.Chinchón](https://twitter.com/aschinchon) and his blog
 [Fronkonstin](https://fronkonstin.com/) on usign R and mathematics to
